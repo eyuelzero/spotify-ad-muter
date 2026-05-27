@@ -1,0 +1,7 @@
+pycaw
+pygetwindow
+psutil
+comtypes
+pystray
+pillow
+pyinstaller
