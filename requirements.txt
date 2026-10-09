@@ -1,7 +1,27 @@
-pycaw
-pygetwindow
-psutil
-comtypes
+# =============================================================================
+# Requirements — Spotify Ad Muter (Cross-Platform)
+# =============================================================================
+#
+# Environment markers (sys_platform == 'win32') ensure that Windows packages
+# are installed automatically on Windows, while avoiding build errors on Linux.
+#
+# Windows installation:
+#   pip install -r requirements.txt
+#
+# Linux installation:
+#   pip install -r requirements.txt
+#   sudo pacman -S python-dbus tk  (Arch/CachyOS)
+#   or: sudo apt install python3-dbus python3-tk  (Debian/Ubuntu)
+# =============================================================================
+
+# ── Shared dependencies ───────────────────────────────────────────────────────
 pystray
 pillow
 pyinstaller
+
+# ── Windows-only dependencies (unchanged functionality) ───────────────────────
+# Evaluated only when running on Windows (sys_platform == 'win32')
+pycaw; sys_platform == 'win32'
+pygetwindow; sys_platform == 'win32'
+psutil; sys_platform == 'win32'
+comtypes; sys_platform == 'win32'
